@@ -1,0 +1,54 @@
+﻿@model IEnumerable<StockInventory>
+
+
+<h2>Vehicle</h2>
+
+<div style="display: block">
+    <a href="/Vehicle/InsertVehicle/">Insert a Vehicle into Inventory</a>
+</div>
+
+<table class="table table-hover table-striped">
+    <thead>
+        <tr class="text-center">
+            <th>StockNumber</th>
+            <th>VIN</th>
+            <th>Year</th>
+            <th>Make</th>
+            <th>Model</th>
+            <th>ExteriorColor</th>
+            <th>InteriorColor</th>
+            <th>Seats</th>
+            <th>Status</th>
+            <th>DaysInInventory</th>
+            <th>Price</th>
+            <th>Condition</th>
+            <th>SuggestedMSRP</th>
+            <th>Mileage</th>
+            <th>VehicleClass</th>
+            <th>DriveTrain</th>
+        </tr>
+    </thead>
+
+    @foreach (var vehicle in Model)
+    {
+        <tr class="text-center">
+            <td><a href=/Vehicle/ViewVehicle/@vehicle.StockNumber>@vehicle.StockNumber</a></td>
+            <td>@vehicle.VIN</td>
+            <td>@vehicle.Year</td>
+            <td>@vehicle.Make</td>
+            <td>@vehicle.Model</td>
+            <td>@vehicle.ExteriorColor</td>
+            <td>@vehicle.InteriorColor</td>
+            <td>@vehicle.Seats</td>
+            <td>@vehicle.Status</td>
+            <td>@vehicle.DaysInInventory</td>
+            <td>$@vehicle.Price.ToString("N")</td>
+            <td>@vehicle.CarCondition</td>
+            <td>$@vehicle.SuggestedMSRP.ToString("N")</td>
+            <td>@vehicle.Mileage.ToString("N0")</td>
+            <td>@vehicle.VehicleClass</td>
+            <td>@vehicle.DriveTrain</td>
+        </tr>
+
+    }
+</table>
