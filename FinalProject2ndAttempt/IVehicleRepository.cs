@@ -10,5 +10,6 @@ namespace FinalProject2ndAttempt
     {
         public IEnumerable<StockInventory> GetAllVehicles();
         public StockInventory GetVehicle(int id);
+        public void UpdateVehicle(StockInventory vehicle);
     }
 }

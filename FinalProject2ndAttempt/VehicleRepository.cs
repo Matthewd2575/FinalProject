@@ -24,5 +24,10 @@ namespace FinalProject2ndAttempt
             return _conn.QuerySingle<StockInventory>("SELECT * FROM StockInventory WHERE StockNumber = @id",
                 new { id = id });
         }
+        public void UpdateVehicle(StockInventory vehicle)
+        {
+            _conn.Execute("UPDATE StockInventory SET VIN = @vin, Year = @year, Make = @make, Model = @model, ExteriorColor = @exteriorcolor, InteriorColor = @interiorcolor, Seats = @seats, Status = @status, DaysInInventory = @daysininventory, Price = @price, CarCondition = @carcondition, SuggestedMSRP = @suggestedmsrp, Mileage = @mileage WHERE StockNumber = @id",
+                new { vin = vehicle.VIN, year = vehicle.Year, make = vehicle.Make, model = vehicle.Model, exteriorcolor = vehicle.ExteriorColor, interiorcolor = vehicle.InteriorColor, seats = vehicle.Seats, status = vehicle.Status, daysininventory = vehicle.DaysInInventory, price = vehicle.Price, carcondition = vehicle.CarCondition, suggestedMSRP = vehicle.SuggestedMSRP, mileage = vehicle.Mileage, id = vehicle.StockNumber });
+        }
     }
 }

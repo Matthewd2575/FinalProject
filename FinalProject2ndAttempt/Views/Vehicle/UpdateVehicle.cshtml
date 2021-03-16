@@ -1,0 +1,79 @@
+﻿@model StockInventory
+
+<h2>Update @Model.StockNumber</h2>
+
+@using (Html.BeginForm("UpdateVehicleToDatabase", "Vehicle", "Post"))
+{
+    <input asp-for="StockNumber" type="hidden" value="@Model.StockNumber" />
+
+    <label asp-for="VIN" class="control-label">VIN</label>
+
+    <input type="text" name="VIN" class="form-control" value="@Model.VIN" />
+
+    <label asp-for="Year" class="control-label">Year</label>
+
+    <input type="text" name="Year" class="form-control" value="@Model.Year" />
+
+    <label asp-for="Make" class="control-label">Make</label>
+
+    <input type="text" name="Make" class="form-control" value="@Model.Make" />
+
+    <label asp-for="Model" class="control-label">Model</label>
+
+    <input type="text" name="Model" class="form-control" value="@Model.Model" />
+
+    <label asp-for="ExteriorColor" class="control-label">ExteriorColor</label>
+    <input type="text" name="ExteriorColor" class="form-control" value="@Model.ExteriorColor" />
+
+    <label asp-for="InteriorColor" class="control-label">InteriorColor</label>
+
+    <input type="text" name="InteriorColor" class="form-control" value="@Model.InteriorColor" />
+
+    <label asp-for="Seats" class="control-label">Seats</label>
+
+    <input type="text" name="Seats" class="form-control" value="@Model.Seats" />
+
+    <label asp-for="Status" class="control-label">Status</label>
+
+    <input type="text" name="Status" class="form-control" value="@Model.Status" />
+
+    <label asp-for="DaysInInventory" class="control-label">DaysInInventory</label>
+
+    <input type="text" name="DaysInInventory" class="form-control" value="@Model.DaysInInventory" />
+
+    <label asp-for="Price" class="control-label">Price</label>
+
+    <input type="number" step="0.01" name="Price" class="form-control" value="@Model.Price" />
+
+    <label asp-for="CarCondition" class="control-label">CarCondition</label>
+
+    <input type="text" name="CarCondition" class="form-control" value="@Model.CarCondition" />
+
+    <label asp-for="SuggestedMSRP" class="control-label">SuggestedMSRP</label>
+
+    <input type="number" step="0.01" name="SuggestedMSRP" class="form-control" value="@Model.SuggestedMSRP" />
+
+    <label asp-for="Mileage" class="control-label">Mileage</label>
+
+    <input type="number" step="0.01" name="Mileage" class="form-control" value="@Model.Mileage" />
+
+   /* <div class="form-group">
+        <label for="">Select a VehicleClass</label>
+        <select class="form-control" name="CategoryID" value="">
+            @foreach (var cat in Model.Categories)
+            {
+                <option value="@cat.CategoryID">@cat.CategoryID @cat.VehicleClass</option>
+            }
+        </select>
+        <label for="">Select a DriveTrain</label>
+        <select class="form-control" name="DriveTrainID" value="">
+            @foreach (var x in Model.DriveTrains)
+            {
+                <option value="@x.DriveTrainID">@x.DriveTrainID @x.DriveTrain</option>
+            }
+        </select>
+    </div>*/
+
+    <input type="submit" value="Update Vehicle" class="btn btn-primary" />
+
+}

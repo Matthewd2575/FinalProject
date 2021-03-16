@@ -1,4 +1,5 @@
-﻿using Microsoft.AspNetCore.Mvc;
+﻿using FinalProject2ndAttempt.Models;
+using Microsoft.AspNetCore.Mvc;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -23,6 +24,27 @@ namespace FinalProject2ndAttempt.Controllers
             var vehicle = repo.GetVehicle(id);
 
             return View(vehicle);
+        }
+        public IActionResult UpdateVehicle(int id)
+        {
+            StockInventory prod = repo.GetVehicle(id);
+            //prod = repo.AssignCategory();
+            //repo.AssignDriveTrain(prod);
+
+            repo.UpdateVehicle(prod);
+
+            if (prod == null)
+            {
+                return View("VehicleNotFound");
+            }
+
+            return View(prod);
+        }
+        public IActionResult UpdateVehicleToDatabase(StockInventory vehicle)
+        {
+            repo.UpdateVehicle(vehicle);
+
+            return RedirectToAction("ViewVehicle", new { id = vehicle.StockNumber });
         }
     }
 }
