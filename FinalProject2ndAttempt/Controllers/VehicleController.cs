@@ -29,7 +29,7 @@ namespace FinalProject2ndAttempt.Controllers
         {
             StockInventory prod = repo.GetVehicle(id);
             //prod = repo.AssignCategory();
-            //repo.AssignDriveTrain(prod);
+           //repo.AssignDriveTrain(prod);
 
             repo.UpdateVehicle(prod);
 

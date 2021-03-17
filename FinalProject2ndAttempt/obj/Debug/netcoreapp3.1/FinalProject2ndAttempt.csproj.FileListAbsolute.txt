@@ -51,3 +51,4 @@ C:\Users\Test\repos\FinalProject2ndAttempt\FinalProject2ndAttempt\obj\Debug\netc
 C:\Users\Test\repos\FinalProject2ndAttempt\FinalProject2ndAttempt\obj\Debug\netcoreapp3.1\FinalProject2ndAttempt.genruntimeconfig.cache
 C:\Users\Test\repos\FinalProject2ndAttempt\FinalProject2ndAttempt\obj\Debug\netcoreapp3.1\Razor\Views\Vehicle\ViewVehicle.cshtml.g.cs
 C:\Users\Test\repos\FinalProject2ndAttempt\FinalProject2ndAttempt\obj\Debug\netcoreapp3.1\Razor\Views\Vehicle\UpdateVehicle.cshtml.g.cs
+C:\Users\Test\repos\FinalProject2ndAttempt\FinalProject2ndAttempt\obj\Debug\netcoreapp3.1\FinalProject2ndAttempt.csprojAssemblyReference.cache
