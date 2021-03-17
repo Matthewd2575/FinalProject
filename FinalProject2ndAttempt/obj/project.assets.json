@@ -992,11 +992,11 @@
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "C:\\Users\\Test\\repos\\FinalProject2ndAttempt\\FinalProject2ndAttempt\\FinalProject2ndAttempt.csproj",
+      "projectUniqueName": "C:\\Users\\Test\\repos\\FinalProject\\FinalProject2ndAttempt\\FinalProject2ndAttempt.csproj",
       "projectName": "FinalProject2ndAttempt",
-      "projectPath": "C:\\Users\\Test\\repos\\FinalProject2ndAttempt\\FinalProject2ndAttempt\\FinalProject2ndAttempt.csproj",
+      "projectPath": "C:\\Users\\Test\\repos\\FinalProject\\FinalProject2ndAttempt\\FinalProject2ndAttempt.csproj",
       "packagesPath": "C:\\Users\\Test\\.nuget\\packages\\",
-      "outputPath": "C:\\Users\\Test\\repos\\FinalProject2ndAttempt\\FinalProject2ndAttempt\\obj\\",
+      "outputPath": "C:\\Users\\Test\\repos\\FinalProject\\FinalProject2ndAttempt\\obj\\",
       "projectStyle": "PackageReference",
       "configFilePaths": [
         "C:\\Users\\Test\\AppData\\Roaming\\NuGet\\NuGet.Config",

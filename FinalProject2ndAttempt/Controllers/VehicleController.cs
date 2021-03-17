@@ -46,5 +46,18 @@ namespace FinalProject2ndAttempt.Controllers
 
             return RedirectToAction("ViewVehicle", new { id = vehicle.StockNumber });
         }
+        public IActionResult InsertVehicle()//added this
+        {
+            var prod = repo.AssignVehicle();
+            //repo.AssignDriveTrain(prod);
+
+            return View(prod);
+        }
+        public IActionResult InsertVehicleToDatabase(StockInventory vehicleToInsert)//added this
+        {
+            repo.InsertVehicle(vehicleToInsert);
+
+            return RedirectToAction("Index");
+        }
     }
 }

@@ -26,7 +26,8 @@ namespace FinalProject2ndAttempt.Models
         public string InteriorColor { get; set; }
         public string ExteriorColor { get; set; }
         public int Seats { get; set; }
-        public string VehicleClass { get; set; } //added this
+        public string VehicleClass { get; set; }
         public string DriveTrain { get; set; }
+        public IEnumerable<VehicleClassification> VehicleClasses { get; set; } //added this
     }
 }

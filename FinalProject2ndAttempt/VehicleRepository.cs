@@ -26,8 +26,42 @@ namespace FinalProject2ndAttempt
         }
         public void UpdateVehicle(StockInventory vehicle)
         {
-            _conn.Execute("UPDATE StockInventory SET VIN = @vin, Year = @year, Make = @make, Model = @model, ExteriorColor = @exteriorcolor, InteriorColor = @interiorcolor, Seats = @seats, Status = @status, DaysInInventory = @daysininventory, Price = @price, CarCondition = @carcondition, SuggestedMSRP = @suggestedmsrp, Mileage = @mileage, CategoryID = @categoryid, DriveTrainID = @drivetrainid WHERE StockNumber = @id",
-                new { vin = vehicle.VIN, year = vehicle.Year, make = vehicle.Make, model = vehicle.Model, exteriorcolor = vehicle.ExteriorColor, interiorcolor = vehicle.InteriorColor, seats = vehicle.Seats, status = vehicle.Status, daysininventory = vehicle.DaysInInventory, price = vehicle.Price, carcondition = vehicle.CarCondition, suggestedMSRP = vehicle.SuggestedMSRP, mileage = vehicle.Mileage, categoryid = vehicle.CategoryID, drivetrainid = vehicle.DriveTrainID, id = vehicle.StockNumber });
+            _conn.Execute("UPDATE StockInventory SET VIN = @vin, Year = @year, Make = @make, Model = @model, ExteriorColor = @exteriorcolor, InteriorColor = @interiorcolor, Seats = @seats, Status = @status, DaysInInventory = @daysininventory, Price = @price, CarCondition = @carcondition, SuggestedMSRP = @suggestedmsrp, Mileage = @mileage, CategoryID = @categoryid WHERE StockNumber = @id",
+                new { vin = vehicle.VIN, year = vehicle.Year, make = vehicle.Make, model = vehicle.Model, exteriorcolor = vehicle.ExteriorColor, interiorcolor = vehicle.InteriorColor, seats = vehicle.Seats, status = vehicle.Status, daysininventory = vehicle.DaysInInventory, price = vehicle.Price, carcondition = vehicle.CarCondition, suggestedMSRP = vehicle.SuggestedMSRP, mileage = vehicle.Mileage, categoryid = vehicle.CategoryID, id = vehicle.StockNumber });
+        }
+        public void InsertVehicle(StockInventory vehicleToInsert) //added this
+        {
+            _conn.Execute("INSERT INTO StockInventory (stockinventory.VIN, stockinventory.YEAR, stockinventory.MAKE, stockinventory.MODEL, stockinventory.ExteriorColor, stockinventory.InteriorColor, stockinventory.Seats, stockinventory.STATUS, stockinventory.DAYSININVENTORY, stockinventory.PRICE, stockinventory.CARCONDITION, stockinventory.SUGGESTEDMSRP, stockinventory.MILEAGE, stockinventory.CATEGORYID) VALUES (@vin, @year, @make, @model, @exteriorcolor, @interiorcolor, @seats, @status, @daysininventory, @price, @carcondition, @suggestedmsrp, @mileage, @categoryID);",
+                new
+                {
+                    vin = vehicleToInsert.VIN,
+                    year = vehicleToInsert.Year,
+                    make = vehicleToInsert.Make,
+                    model = vehicleToInsert.Model,
+                    exteriorcolor = vehicleToInsert.ExteriorColor,
+                    interiorcolor = vehicleToInsert.InteriorColor,
+                    seats = vehicleToInsert.Seats,
+                    status = vehicleToInsert.Status,
+                    daysininventory = vehicleToInsert.DaysInInventory,
+                    price = vehicleToInsert.Price,
+                    carcondition = vehicleToInsert.CarCondition,
+                    suggestedmsrp = vehicleToInsert.SuggestedMSRP,
+                    mileage = vehicleToInsert.Mileage,
+                    categoryID = vehicleToInsert.CategoryID
+                    
+                });
+        }
+        public IEnumerable<VehicleClassification> GetVehicleClasses() //added this
+        {
+            return _conn.Query<VehicleClassification>("SELECT * FROM vehicleinventory.classification;");
+        }
+        public StockInventory AssignVehicle()
+        {
+            var vehicleList = GetVehicleClasses();
+            var vehicle = new StockInventory();
+            vehicle.VehicleClasses = vehicleList;
+
+            return vehicle;
         }
     }
 }

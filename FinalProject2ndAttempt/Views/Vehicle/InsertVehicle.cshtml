@@ -1,8 +1,6 @@
 ﻿@model StockInventory
-
-<h2>Update @Model.StockNumber</h2>
-
-@using (Html.BeginForm("UpdateVehicleToDatabase", "Vehicle", "Post"))
+<h2>Insert a New Vehicle</h2>
+@using (Html.BeginForm("InsertVehicleToDatabase", "Vehicle", "Post"))
 {
     <input asp-for="StockNumber" type="hidden" value="@Model.StockNumber" />
 
@@ -34,7 +32,6 @@
     <input type="text" name="Seats" class="form-control" value="@Model.Seats" />
 
     <label asp-for="Status" class="control-label">Status</label>
-
     <input type="text" name="Status" class="form-control" value="@Model.Status" />
 
     <label asp-for="DaysInInventory" class="control-label">DaysInInventory</label>
@@ -45,9 +42,9 @@
 
     <input type="number" step="0.01" name="Price" class="form-control" value="@Model.Price" />
 
-    <label asp-for="CarCondition" class="control-label">CarCondition</label>
+    <label asp-for="CarCondition" class="control-label">Condition</label>
 
-    <input type="text" name="CarCondition" class="form-control" value="@Model.CarCondition" />
+    <input type="text" name="Condition" class="form-control" value="@Model.CarCondition" />
 
     <label asp-for="SuggestedMSRP" class="control-label">SuggestedMSRP</label>
 
@@ -64,10 +61,8 @@
             {
                 <option value="@cat.CategoryID">@cat.CategoryID @cat.VehicleClass</option>
             }
-       
+        
         </select>
     </div>
-
-    <input type="submit" value="Update Vehicle" class="btn btn-primary" />
-
+    <input type="submit" value="Insert Vehicle" class="btn btn-primary" />
 }
