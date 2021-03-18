@@ -46,7 +46,7 @@
 </div>
 
 <div style="display: block">
-    @using (Html.BeginForm("DeleteProduct", "Product", "Post"))
+    @using (Html.BeginForm("DeleteVehicle", "Vehicle", "Post"))
     {
         <input type="hidden" asp-for="StockNumber" value="@Model.StockNumber" />
         <input type="submit" onclick="return confirm('Are you sure?')" value="Delete Vehicle From Inventory" />

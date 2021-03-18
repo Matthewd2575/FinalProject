@@ -76,6 +76,11 @@ namespace FinalProject2ndAttempt
 
             //return vehicle2;
         }
+        public void DeleteVehicle(StockInventory vehicle)
+        {
 
+            _conn.Execute("DELETE FROM stockinventory WHERE stocknumber = @id;",
+                                       new { id = vehicle.StockNumber });
+        }
     }
 }

@@ -61,5 +61,11 @@ namespace FinalProject2ndAttempt.Controllers
 
             return RedirectToAction("Index");
         }
+        public IActionResult DeleteVehicle(StockInventory vehicle)
+        {
+            repo.DeleteVehicle(vehicle);
+
+            return RedirectToAction("Index");
+        }
     }
 }

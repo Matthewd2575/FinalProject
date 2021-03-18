@@ -16,5 +16,6 @@ namespace FinalProject2ndAttempt
         public StockInventory AssignVehicle(); //added this 1st
         public IEnumerable<DriveTrainClassification> GetDriveTrains();//added this 2nd
         public void AssignDriveTrain(StockInventory vehicle);//added this 2nd
+        public void DeleteVehicle(StockInventory vehicle);
     }
 }
