@@ -52,11 +52,11 @@ namespace FinalProject2ndAttempt
                     
                 });
         }
-        public IEnumerable<VehicleClassification> GetVehicleClasses() //added this 1st
+        public IEnumerable<VehicleClassification> GetVehicleClasses() 
         {
             return _conn.Query<VehicleClassification>("SELECT * FROM vehicleinventory.classification;");
         }
-        public StockInventory AssignVehicle()//added this 1st
+        public StockInventory AssignVehicle()
         {
             var vehicleList = GetVehicleClasses();
             var vehicle = new StockInventory();
@@ -81,6 +81,12 @@ namespace FinalProject2ndAttempt
 
             _conn.Execute("DELETE FROM stockinventory WHERE stocknumber = @id;",
                                        new { id = vehicle.StockNumber });
+        }
+
+        public IEnumerable<StockInventory> SearchVehicle(string search)
+        {
+            return _conn.Query<StockInventory>("SELECT * FROM stockinventory WHERE MAKE LIKE @make or YEAR like @year;",
+        new { make = "%" +search + "%", year = "%" + search + "%" });
         }
     }
 }
