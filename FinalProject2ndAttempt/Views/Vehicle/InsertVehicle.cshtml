@@ -42,9 +42,9 @@
 
     <input type="number" step="0.01" name="Price" class="form-control" value="@Model.Price" />
 
-    <label asp-for="CarCondition" class="control-label">Condition</label>
+    <label asp-for="CarCondition" class="control-label">CarCondition</label>
 
-    <input type="text" name="Condition" class="form-control" value="@Model.CarCondition" />
+    <input type="text" name="CarCondition" class="form-control" value="@Model.CarCondition" />
 
     <label asp-for="SuggestedMSRP" class="control-label">SuggestedMSRP</label>
 
@@ -61,7 +61,13 @@
             {
                 <option value="@cat.CategoryID">@cat.CategoryID @cat.VehicleClass</option>
             }
-        
+        </select>
+        <label for="">Select a DriveTrain</label>
+        <select class="form-control" name="DriveTrainID" value="">
+            @foreach (var x in Model.DriveTrains)
+            {
+                <option value="@x.DriveTrainID">@x.DriveTrainID @x.DriveTrain</option>
+            }
         </select>
     </div>
     <input type="submit" value="Insert Vehicle" class="btn btn-primary" />

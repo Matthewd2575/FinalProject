@@ -64,7 +64,13 @@
             {
                 <option value="@cat.CategoryID">@cat.CategoryID @cat.VehicleClass</option>
             }
-       
+        </select>
+        <label for="">Select a DriveTrain</label>
+        <select class="form-control" name="DriveTrainID" value="">
+            @foreach (var x in Model.DriveTrains)
+            {
+                <option value="@x.DriveTrainID">@x.DriveTrainID @x.DriveTrain</option>
+            }
         </select>
     </div>
 

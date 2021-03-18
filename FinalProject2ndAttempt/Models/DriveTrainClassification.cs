@@ -6,9 +6,9 @@ using FinalProject2ndAttempt.Models;
 
 namespace FinalProject2ndAttempt.Models
 {
-    public class VehicleClassification //added this 1st
+    public class DriveTrainClassification //added this next
     {
-        public int CategoryID { get; set; }
-        public string VehicleClass { get; set; }
+        public int DriveTrainID { get; set; }
+        public string DriveTrain { get; set; }
     }
 }

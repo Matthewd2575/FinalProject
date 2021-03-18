@@ -28,6 +28,7 @@ namespace FinalProject2ndAttempt.Models
         public int Seats { get; set; }
         public string VehicleClass { get; set; }
         public string DriveTrain { get; set; }
-        public IEnumerable<VehicleClassification> VehicleClasses { get; set; } //added this
+        public IEnumerable<VehicleClassification> VehicleClasses { get; set; } //added this 1st
+        public IEnumerable<DriveTrainClassification> DriveTrains { get; set; } //added this next
     }
 }

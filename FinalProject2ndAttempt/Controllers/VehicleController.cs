@@ -28,10 +28,12 @@ namespace FinalProject2ndAttempt.Controllers
         public IActionResult UpdateVehicle(int id)
         {
             StockInventory prod = repo.GetVehicle(id);
-            //prod = repo.AssignCategory();
-           //repo.AssignDriveTrain(prod);
+            prod.VehicleClasses = repo.GetVehicleClasses();
+            
+            //prod = repo.AssignVehicle(); //undid this and renamed
+            repo.AssignDriveTrain(prod); //undid this 
 
-            repo.UpdateVehicle(prod);
+            //see if we need this later repo.UpdateVehicle(prod);
 
             if (prod == null)
             {
@@ -44,16 +46,16 @@ namespace FinalProject2ndAttempt.Controllers
         {
             repo.UpdateVehicle(vehicle);
 
-            return RedirectToAction("ViewVehicle", new { id = vehicle.StockNumber });
+            return RedirectToAction("ViewVehicle", new {id = vehicle.StockNumber});
         }
-        public IActionResult InsertVehicle()//added this
+        public IActionResult InsertVehicle()//added this 1st
         {
             var prod = repo.AssignVehicle();
-            //repo.AssignDriveTrain(prod);
+            repo.AssignDriveTrain(prod); //undid this
 
             return View(prod);
         }
-        public IActionResult InsertVehicleToDatabase(StockInventory vehicleToInsert)//added this
+        public IActionResult InsertVehicleToDatabase(StockInventory vehicleToInsert)//added this 1st
         {
             repo.InsertVehicle(vehicleToInsert);
 
