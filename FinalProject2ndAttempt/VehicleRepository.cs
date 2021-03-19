@@ -64,17 +64,17 @@ namespace FinalProject2ndAttempt
 
             return vehicle;
         }
-        public IEnumerable<DriveTrainClassification> GetDriveTrains()//added this 2nd
+        public IEnumerable<DriveTrainClassification> GetDriveTrains()
         {
             return _conn.Query<DriveTrainClassification>("SELECT * FROM vehicleinventory.drivetrain;");
         }
-        public void AssignDriveTrain(StockInventory vehicle) //added this 2nd
+        public void AssignDriveTrain(StockInventory vehicle) 
         {
             var driveTrainList = GetDriveTrains();
-            //var vehicle2 = new StockInventory();
+            
             vehicle.DriveTrains = driveTrainList;
 
-            //return vehicle2;
+           
         }
         public void DeleteVehicle(StockInventory vehicle)
         {

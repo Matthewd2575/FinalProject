@@ -107,3 +107,4 @@ C:\Users\Test\repos\FinalProject\FinalProject2ndAttempt\obj\Debug\netcoreapp3.1\
 C:\Users\Test\repos\FinalProject\FinalProject2ndAttempt\obj\Debug\netcoreapp3.1\FinalProject2ndAttempt.genruntimeconfig.cache
 C:\Users\Test\repos\FinalProject\FinalProject2ndAttempt\obj\Debug\netcoreapp3.1\Razor\Views\Vehicle\InsertVehicle.cshtml.g.cs
 C:\Users\Test\repos\FinalProject\FinalProject2ndAttempt\obj\Debug\netcoreapp3.1\Razor\Views\Vehicle\Search.cshtml.g.cs
+C:\Users\Test\repos\FinalProject\FinalProject2ndAttempt\obj\Debug\netcoreapp3.1\FinalProject2ndAttempt.csprojAssemblyReference.cache
