@@ -85,8 +85,8 @@ namespace FinalProject2ndAttempt
 
         public IEnumerable<StockInventory> SearchVehicle(string search)
         {
-            return _conn.Query<StockInventory>("SELECT * FROM stockinventory WHERE MAKE LIKE @make or YEAR like @year;",
-        new { make = "%" +search + "%", year = "%" + search + "%" });
+            return _conn.Query<StockInventory>("SELECT S.stocknumber, s.Year, s.Make, s.Model, s.status, s.Daysininventory, s.Price, s.Carcondition, s.Suggestedmsrp, s.Mileage, s.vin, s.interiorcolor, s.exteriorcolor, s.seats, d.drivetrain, c.vehicleclass from stockinventory as s left outer join classification as c on s.categoryid = c.categoryid left outer join drivetrain as d on s.drivetrainid = d.drivetrainid WHERE MAKE like @make or YEAR like @year or CARCONDITION like @carcondition;",
+        new { make = "%" +search + "%", year = "%" + search + "%", carcondition = "%" + search + "%" });
         }
     }
 }
